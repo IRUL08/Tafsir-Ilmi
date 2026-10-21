@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+/* Pastikan background default adalah gelap */
+body {
+  background-color: #030712; /* gray-950 */
+  color: #ffffff;
+}
