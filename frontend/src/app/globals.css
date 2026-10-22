@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+/* Tailwind CSS v4 manual dark-mode variant */
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+/* Base design tokens & transitions */
+:root {
+  --bg-canvas: #f8fafc;
+  --bg-card: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --border-subtle: #e2e8f0;
+  --accent-emerald: #059669;
+}
+
+.dark {
+  --bg-canvas: #030712;
+  --bg-card: #111827;
+  --text-primary: #f9fafb;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --accent-emerald: #10b981;
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* ReactFlow styles for canvas and edge labels */
+.react-flow__background {
+  transition: background-color 0.25s ease;
+}
+
+/* Edge labels in Light Mode */
+html:not(.dark) .react-flow__edge-textbg {
+  fill: #ffffff !important;
+  stroke: #cbd5e1 !important;
+  stroke-width: 1.5px !important;
+  rx: 6px;
+  ry: 6px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06));
+}
+
+html:not(.dark) .react-flow__edge-text {
+  fill: #0f172a !important;
+  font-weight: 700 !important;
+  font-size: 11px !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+}
+
+/* Edge labels in Dark Mode */
+.dark .react-flow__edge-textbg {
+  fill: #111827 !important;
+  stroke: rgba(255, 255, 255, 0.15) !important;
+  stroke-width: 1px !important;
+  rx: 6px;
+  ry: 6px;
+}
+
+.dark .react-flow__edge-text {
+  fill: #f3f4f6 !important;
+  font-weight: 600 !important;
+  font-size: 11px !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
