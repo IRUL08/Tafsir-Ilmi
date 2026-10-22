@@ -46,11 +46,11 @@ export default function DashboardPage() {
     : tafsirList.filter(t => t.topics?.name === selectedTopic);
 
   return (
-    <div className="min-h-screen px-6 py-12">
+    <div className="min-h-screen px-6 py-12 transition-colors duration-200">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-10">
-          <h1 className="text-3xl font-bold text-white mb-2">Dashboard Repositori</h1>
+          <h1 className="text-3xl font-bold text-white mb-2 tracking-tight">Dashboard Repositori</h1>
           <p className="text-gray-400">Semua ayat fenomena alam yang telah diproses dan diklasifikasikan oleh AI</p>
         </div>
 
@@ -62,9 +62,9 @@ export default function DashboardPage() {
             { label: "Tampil Saat Ini", value: filtered.length },
             { label: "Sumber Data", value: "Kemenag RI" },
           ].map(({ label, value }) => (
-            <div key={label} className="p-4 rounded-xl bg-white/3 border border-white/8">
-              <div className="text-2xl font-bold text-emerald-400">{value}</div>
-              <div className="text-xs text-gray-500 mt-1">{label}</div>
+            <div key={label} className="p-4 rounded-xl bg-white/3 border border-white/8 shadow-sm">
+              <div className="text-2xl font-bold text-emerald-500">{value}</div>
+              <div className="text-xs text-gray-500 mt-1 font-medium">{label}</div>
             </div>
           ))}
         </div>
@@ -74,16 +74,25 @@ export default function DashboardPage() {
           <Filter size={14} className="text-gray-500" />
           <button
             onClick={() => setSelectedTopic("all")}
-            className={`px-3 py-1 rounded-full text-sm border transition-all ${selectedTopic === "all" ? "bg-emerald-500/20 text-emerald-400 border-emerald-500/40" : "text-gray-400 border-white/10 hover:border-white/20"}`}>
+            className={`px-3 py-1 rounded-full text-sm border transition-all cursor-pointer ${
+              selectedTopic === "all"
+                ? "bg-emerald-500 text-white border-emerald-500 font-medium shadow-sm"
+                : "text-gray-400 border-white/10 hover:border-emerald-500/40"
+            }`}>
             Semua
           </button>
           {topics.map(t => (
             <button key={t.id} onClick={() => setSelectedTopic(t.name)}
-              className={`px-3 py-1 rounded-full text-sm border transition-all ${selectedTopic === t.name ? "bg-emerald-500/20 text-emerald-400 border-emerald-500/40" : "text-gray-400 border-white/10 hover:border-white/20"}`}>
+              className={`px-3 py-1 rounded-full text-sm border transition-all cursor-pointer ${
+                selectedTopic === t.name
+                  ? "bg-emerald-500 text-white border-emerald-500 font-medium shadow-sm"
+                  : "text-gray-400 border-white/10 hover:border-emerald-500/40"
+              }`}>
               {t.name}
             </button>
           ))}
         </div>
+
 
         {/* List */}
         {loading ? (

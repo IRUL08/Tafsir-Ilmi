@@ -215,11 +215,11 @@ function KnowledgeGraphContent() {
         style: {
           background: bgGradient,
           color: "#ffffff",
-          border: `1.5px solid ${borderColor}`,
+          border: `2px solid ${borderColor}`,
           borderRadius: "14px",
           padding: "12px 16px",
           fontSize: "12px",
-          fontWeight: 600,
+          fontWeight: 700,
           boxShadow: `0 10px 25px -5px ${shadowGlow}, 0 0 1px 1px rgba(255,255,255,0.1)`,
           whiteSpace: "pre-wrap",
           textAlign: "center",
@@ -228,6 +228,7 @@ function KnowledgeGraphContent() {
           cursor: "pointer",
           backdropFilter: "blur(8px)",
         },
+
       };
     });
 
@@ -364,35 +365,49 @@ function KnowledgeGraphContent() {
         )}
 
         {/* Legend bar */}
-        <div className="mb-4 p-3 rounded-xl bg-white/5 border border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs">
+        <div className="mb-4 p-3.5 rounded-xl bg-white/5 border border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs shadow-sm">
           <div className="flex items-center gap-4 flex-wrap">
-            <span className="text-gray-400 font-medium">Tipe Node:</span>
-            <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-blue-500"></span> Tafsir</span>
-            <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-purple-500"></span> Topik Sains</span>
-            <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-amber-400"></span> Objek Utama</span>
-            <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Konsep Proses</span>
+            <span className="font-bold text-slate-900 dark:text-gray-300">Tipe Node:</span>
+            <span className="flex items-center gap-1.5 font-bold text-slate-900 dark:text-white">
+              <span className="w-3 h-3 rounded-full bg-blue-500 inline-block shadow-sm"></span> 
+              <span>Tafsir</span>
+            </span>
+            <span className="flex items-center gap-1.5 font-bold text-slate-900 dark:text-white">
+              <span className="w-3 h-3 rounded-full bg-purple-500 inline-block shadow-sm"></span> 
+              <span>Topik Sains</span>
+            </span>
+            <span className="flex items-center gap-1.5 font-bold text-slate-900 dark:text-white">
+              <span className="w-3 h-3 rounded-full bg-amber-400 inline-block shadow-sm"></span> 
+              <span>Objek Utama</span>
+            </span>
+            <span className="flex items-center gap-1.5 font-bold text-slate-900 dark:text-white">
+              <span className="w-3 h-3 rounded-full bg-emerald-500 inline-block shadow-sm"></span> 
+              <span>Konsep Proses</span>
+            </span>
           </div>
-          <div className="flex items-center gap-4 flex-wrap">
-            <span className="text-gray-400 font-medium">4 Relasi Wajib:</span>
-            <span className="px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">:MEMBAHAS_TOPIK</span>
-            <span className="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30">:MENYEBUTKAN</span>
-            <span className="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">:BERLANJUT_KE</span>
-            <span className="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">:MENYEBABKAN</span>
+          <div className="flex items-center gap-2.5 flex-wrap">
+            <span className="font-bold text-slate-900 dark:text-gray-300">4 Relasi Wajib:</span>
+            <span className="px-2.5 py-1 rounded-md bg-purple-100 dark:bg-purple-500/20 text-purple-900 dark:text-purple-300 border border-purple-400 dark:border-purple-500/30 font-bold font-mono text-[11px] shadow-xs">:MEMBAHAS_TOPIK</span>
+            <span className="px-2.5 py-1 rounded-md bg-blue-100 dark:bg-blue-500/20 text-blue-900 dark:text-blue-300 border border-blue-400 dark:border-blue-500/30 font-bold font-mono text-[11px] shadow-xs">:MENYEBUTKAN</span>
+            <span className="px-2.5 py-1 rounded-md bg-cyan-100 dark:bg-cyan-500/20 text-cyan-900 dark:text-cyan-300 border border-cyan-400 dark:border-cyan-500/30 font-bold font-mono text-[11px] shadow-xs">:BERLANJUT_KE</span>
+            <span className="px-2.5 py-1 rounded-md bg-amber-100 dark:bg-amber-500/20 text-amber-900 dark:text-amber-300 border border-amber-400 dark:border-amber-500/30 font-bold font-mono text-[11px] shadow-xs">:MENYEBABKAN</span>
           </div>
         </div>
 
         {topic && (
           <div className="mb-4 flex items-center gap-2">
-            <span className="text-xs text-gray-500">Kategori Sains Utama:</span>
-            <span className="text-xs px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 font-semibold">{topic}</span>
+            <span className="text-xs font-bold text-slate-900 dark:text-gray-300">Kategori Sains Utama:</span>
+            <span className="text-xs px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-500/20 text-purple-900 dark:text-purple-300 border border-purple-400 dark:border-purple-500/40 font-bold shadow-xs">{topic}</span>
           </div>
         )}
 
+
+
         {/* Graph Canvas */}
-        <div className="rounded-2xl overflow-hidden border border-white/10 mb-6 relative bg-gray-950" style={{ height: 520 }}>
+        <div className="rounded-2xl overflow-hidden border border-white/10 mb-6 relative bg-gray-950 shadow-md" style={{ height: 520 }}>
           {loading ? (
             <div className="h-full flex items-center justify-center text-gray-500 gap-2">
-              <Loader2 size={18} className="animate-spin text-emerald-400" /> Memuat Knowledge Graph...
+              <Loader2 size={18} className="animate-spin text-emerald-500" /> Memuat Knowledge Graph...
             </div>
           ) : (
             <>
@@ -402,10 +417,11 @@ function KnowledgeGraphContent() {
                 onNodeClick={onNodeClick}
                 fitView
               >
-                <Background variant={BackgroundVariant.Dots} color="#1f2937" gap={20} />
-                <Controls className="!bg-gray-900 !border-white/10" />
-                <MiniMap className="!bg-gray-900 !border-white/10" nodeColor={n => n.style?.background as string ?? "#10b981"} />
+                <Background variant={BackgroundVariant.Dots} color="#10b981" gap={20} size={1} />
+                <Controls className="!bg-white !border-gray-200 dark:!bg-gray-900 dark:!border-white/10" />
+                <MiniMap className="!bg-white !border-gray-200 dark:!bg-gray-900 dark:!border-white/10" nodeColor={n => n.style?.background as string ?? "#10b981"} />
               </ReactFlow>
+
 
               {/* Node Detail Popup Drawer on click */}
               {selectedNode && (
@@ -457,23 +473,23 @@ function KnowledgeGraphContent() {
         {tafsirContent && (
           <div className="grid md:grid-cols-2 gap-6">
             {/* Ayat & Terjemahan */}
-            <div className="p-6 rounded-2xl bg-white/3 border border-white/8">
-              <h2 className="text-xl font-bold text-emerald-400 mb-6 flex items-center gap-2">
+            <div className="p-6 rounded-2xl bg-white/3 border border-white/8 shadow-sm">
+              <h2 className="text-xl font-bold text-emerald-600 dark:text-emerald-400 mb-6 flex items-center gap-2">
                 <BookOpen size={20} /> Detail Ayat & Tafsir
               </h2>
               
               <div className="space-y-6">
                 {tafsirContent.includes("Teks Arab:") ? (
                   <>
-                    <div className="p-4 rounded-xl bg-gray-950 border border-white/5">
-                      <p className="text-xs text-gray-500 mb-3 font-medium uppercase tracking-wider">Teks Arab</p>
-                      <p className="text-2xl text-white text-right leading-relaxed font-arabic" dir="rtl">
+                    <div className="p-4 rounded-xl bg-gray-950 border border-white/5 shadow-xs">
+                      <p className="text-xs text-slate-700 dark:text-gray-400 mb-3 font-bold uppercase tracking-wider">Teks Arab</p>
+                      <p className="text-2xl text-slate-900 dark:text-white text-right leading-relaxed font-arabic" dir="rtl">
                         {tafsirContent.split("Teks Arab:")[1]?.split("Terjemahan")[0]?.trim()}
                       </p>
                     </div>
-                    <div className="p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/10">
-                      <p className="text-xs text-emerald-500/70 mb-2 font-medium uppercase tracking-wider">Terjemahan / Tafsir</p>
-                      <p className="text-sm text-gray-300 leading-relaxed">
+                    <div className="p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-500/10 shadow-xs">
+                      <p className="text-xs text-emerald-700 dark:text-emerald-400 mb-2 font-bold uppercase tracking-wider">Terjemahan / Tafsir</p>
+                      <p className="text-sm text-slate-800 dark:text-gray-300 leading-relaxed font-medium">
                         {tafsirContent.split("Terjemahan")[1] 
                           ? "Terjemahan" + tafsirContent.split("Terjemahan")[1] 
                           : tafsirContent}
@@ -481,28 +497,28 @@ function KnowledgeGraphContent() {
                     </div>
                   </>
                 ) : (
-                  <div className="p-4 rounded-xl bg-gray-950 border border-white/5">
-                    <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-wrap">{tafsirContent}</p>
+                  <div className="p-4 rounded-xl bg-gray-950 border border-white/5 shadow-xs">
+                    <p className="text-sm text-slate-800 dark:text-gray-300 leading-relaxed whitespace-pre-wrap font-medium">{tafsirContent}</p>
                   </div>
                 )}
               </div>
             </div>
 
             {/* Statistik & Insight */}
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-emerald-900/20 to-teal-900/10 border border-emerald-500/20">
-              <h2 className="text-xl font-bold text-white mb-4">Statistik Graph</h2>
+            <div className="p-6 rounded-2xl bg-emerald-50/50 dark:bg-gradient-to-br dark:from-emerald-900/20 dark:to-teal-900/10 border border-emerald-200 dark:border-emerald-500/20 shadow-sm">
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Statistik Graph</h2>
               <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="p-4 rounded-xl bg-white/5 border border-white/5 text-center">
-                  <div className="text-3xl font-bold text-emerald-400 mb-1">{nodes.length}</div>
-                  <div className="text-xs text-gray-400">Total Node (Entitas)</div>
+                <div className="p-4 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/5 text-center shadow-xs">
+                  <div className="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 mb-1">{nodes.length}</div>
+                  <div className="text-xs font-bold text-slate-700 dark:text-gray-400">Total Node (Entitas)</div>
                 </div>
-                <div className="p-4 rounded-xl bg-white/5 border border-white/5 text-center">
-                  <div className="text-3xl font-bold text-teal-400 mb-1">{edges.length}</div>
-                  <div className="text-xs text-gray-400">Total Relasi (Edge)</div>
+                <div className="p-4 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/5 text-center shadow-xs">
+                  <div className="text-3xl font-extrabold text-teal-600 dark:text-teal-400 mb-1">{edges.length}</div>
+                  <div className="text-xs font-bold text-slate-700 dark:text-gray-400">Total Relasi (Edge)</div>
                 </div>
               </div>
-              <div className="p-4 rounded-xl bg-white/5 border border-white/5 space-y-2 text-xs text-gray-300">
-                <p className="font-semibold text-emerald-400 flex items-center gap-1.5">
+              <div className="p-4 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/5 space-y-2 text-xs text-slate-800 dark:text-gray-300 font-medium shadow-xs">
+                <p className="font-bold text-emerald-700 dark:text-emerald-400 flex items-center gap-1.5">
                   <Info size={14} /> Aturan Graph Sistem
                 </p>
                 <p>1. <strong>Topik Sains</strong>: 1 kategori utama ({topic || "Terklasifikasi"}).</p>
@@ -510,6 +526,7 @@ function KnowledgeGraphContent() {
                 <p>3. <strong>4 Relasi Wajib</strong>: :MEMBAHAS_TOPIK, :MENYEBUTKAN, :BERLANJUT_KE, dan :MENYEBABKAN.</p>
               </div>
             </div>
+
           </div>
         )}
       </div>

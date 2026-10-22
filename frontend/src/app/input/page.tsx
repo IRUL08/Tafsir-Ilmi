@@ -75,20 +75,21 @@ export default function InputPage() {
             Cukup <strong>masukkan teks tafsir saja</strong>. Sistem AI akan secara otomatis:
           </p>
           <div className="grid sm:grid-cols-3 gap-2.5 mt-3 text-xs">
-            <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-gray-300">
-              <span className="text-emerald-400 font-bold block mb-1">1. Deteksi Ayat Otomatis</span>
+            <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 text-slate-800 dark:text-gray-300 font-medium">
+              <span className="text-emerald-600 dark:text-emerald-400 font-bold block mb-1">1. Deteksi Ayat Otomatis</span>
               AI mengenali Surah &amp; nomor Ayat dari kandungan tafsir Anda.
             </div>
-            <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-gray-300">
-              <span className="text-teal-400 font-bold block mb-1">2. Ambil dari Dataset</span>
+            <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 text-slate-800 dark:text-gray-300 font-medium">
+              <span className="text-teal-700 dark:text-teal-400 font-bold block mb-1">2. Ambil dari Dataset</span>
               Mengambil teks Arab &amp; terjemahan resmi Kemenag RI dari database.
             </div>
-            <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-gray-300">
-              <span className="text-cyan-400 font-bold block mb-1">3. Bentuk Knowledge Graph</span>
+            <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 text-slate-800 dark:text-gray-300 font-medium">
+              <span className="text-cyan-700 dark:text-cyan-400 font-bold block mb-1">3. Bentuk Knowledge Graph</span>
               Objek utama tafsir (Besi, Hujan, Janin, dll.) wajib menjadi node konsep dengan 4 relasi valid.
             </div>
           </div>
         </div>
+
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
